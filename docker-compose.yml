@@ -1,0 +1,17 @@
+version: "3"
+services:
+  farabio:
+      image: farabio:${VERSION_FARABIO}
+      restart: unless-stopped
+      stdin_open: true
+      tty: true
+      build: 
+        context: .
+        dockerfile: ./farabio/Dockerfile
+      deploy: 
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: all
+                capabilities: [gpu]

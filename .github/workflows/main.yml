@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - "dev"
+
+jobs:
+  farabio:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Farabio container
+        run: docker compose build farabio
+      
+      - name: Test Farabio container
+        run: ./tests/test_farabio_docker.sh
+  
