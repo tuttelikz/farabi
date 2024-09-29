@@ -6,15 +6,23 @@ on:
       - "dev"
 
 jobs:
-  farabio:
+  farabio_docker_compose:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build Farabio container
+      - name: Build Farabio with Docker Compose
         run: docker compose build farabio
       
-      - name: Test Farabio container
-        run: ./tests/test_farabio_docker.sh
-  
+      - name: Test Farabio container from Docker Compose
+        run: ./tests/test_docker_compose.sh
+      
+  farabio_docker_hub:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Test Farabio container from Docker Hub
+        run: ./tests/test_docker_hub.sh
