@@ -26,3 +26,15 @@ jobs:
       
       - name: Test Farabio container from Docker Hub
         run: ./tests/test_docker_hub.sh
+
+  farabio_pypi:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Farabio with Docker Compose
+        run: pip install farabio -y
+      
+      - name: Test Farabio container from Docker Compose
+        run: ./tests/test_pypi.sh
