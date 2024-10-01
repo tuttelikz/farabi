@@ -38,3 +38,15 @@ jobs:
       
       - name: Test Farabio from PyPI
         run: ./tests/test_pypi.sh
+
+  farabio_source:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Farabio from PyPI
+        run: git clone git@github.com:tuttelikz/farabio.git && cd farabio
+      
+      - name: Test Farabio from PyPI
+        run: ./tests/test_source.sh
