@@ -11,9 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Build Farabio with Docker Compose
-        run: docker compose build farabio
       
       - name: Test Farabio container from Docker Compose
         run: ./tests/test_docker_compose.sh
@@ -32,9 +29,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Install Farabio from PyPI
-        run: pip install farabio
       
       - name: Test Farabio from PyPI
         run: ./tests/test_pypi.sh
@@ -45,5 +39,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       
-      - name: Test Farabio from PyPI
+      - name: Test Farabio from source
         run: ./tests/test_source.sh
