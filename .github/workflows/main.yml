@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - "dev"
+      - "v2"
 
 jobs:
   farabio_docker_compose:
