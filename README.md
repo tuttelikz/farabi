@@ -1,5 +1,7 @@
 # Farabio
 
+Accelerating life science research with deep learning
+
 ## Installation
 ### A. Run container from Docker Hub
 To run container from [Docker Hub](https://hub.docker.com/repository/docker/tuttelikz/farabio/general):  
