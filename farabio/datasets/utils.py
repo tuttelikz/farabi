@@ -24,4 +24,4 @@ def download(dataset: str):
     if total_size != 0 and progress_bar.n != total_size:
         raise RuntimeError("Could not download file")
 
-download("dsb18")
+    return filepath

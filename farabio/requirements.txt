@@ -1,3 +1,4 @@
 scikit-image==0.24.0
 scikit-learn==1.5.2
 tqdm==4.66.5
+pytest==8.3.3
